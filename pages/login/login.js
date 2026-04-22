@@ -34,7 +34,7 @@ Page({
           return;
         }
 
-        // 把 fresh code 与 returnPath 塞进 globalData，让 index 页 onLoad 用上
+        // 把 fresh code 与 returnPath 塞进 globalData，让 web 页 onLoad 用上
         app.globalData.dyCode = res.code;
         app.globalData.dyCodePromise = Promise.resolve(res.code);
         app.globalData.dyReturnPath = returnPath;
@@ -43,8 +43,10 @@ Page({
         app.globalData.dyPhoneEncryptedData = null;
         app.globalData.dyPhoneIv = null;
 
+        // 注意：首屏 /pages/index/index 已经改成原生入口按钮页（抖音不允许首屏直接是 web-view），
+        // 这里要回跳到承载 web-view 的中转页 /pages/web/web，由它读取 dyReturnPath 落回原 H5 页面。
         tt.redirectTo({
-          url: '/pages/index/index',
+          url: '/pages/web/web',
           fail: (err) => {
             console.warn('[quiz-dy login] redirectTo fail:', err);
             this.setData({ loading: false });
@@ -97,7 +99,7 @@ Page({
   //       app.globalData.dyCode = null;
   //       app.globalData.dyCodePromise = Promise.resolve(null);
   //       tt.redirectTo({
-  //         url: '/pages/index/index',
+  //         url: '/pages/web/web',
   //         fail: (err) => {
   //           console.warn('[quiz-dy login] redirectTo fail:', err);
   //           this.setData({ loading: false });

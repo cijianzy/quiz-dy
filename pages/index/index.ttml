@@ -1,1 +1,16 @@
-<web-view tt:if="{{src}}" class="webview-container" src="{{src}}" bindmessage="onWebViewMessage"></web-view>
+<view class="page">
+  <view class="brand">猜盐</view>
+  <view class="desc">把信息玩起来</view>
+
+  <view class="btn-group">
+    <button class="entry-btn" data-tab="daily" bindtap="onTapEntry">
+      每日挑战
+    </button>
+    <button class="entry-btn" data-tab="quiz" bindtap="onTapEntry">
+      测验
+    </button>
+    <button class="entry-btn" data-tab="multiplayer" bindtap="onTapEntry">
+      对战
+    </button>
+  </view>
+</view>

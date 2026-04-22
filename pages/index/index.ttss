@@ -1,7 +1,52 @@
-.webview-container {
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 160rpx 60rpx 60rpx;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.brand {
+  font-size: 72rpx;
+  font-weight: 700;
+  color: #e48d21;
+  margin-bottom: 16rpx;
+  letter-spacing: 4rpx;
+}
+
+.desc {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 120rpx;
+}
+
+.btn-group {
   width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.entry-btn {
+  width: 100%;
+  max-width: 560rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  border-radius: 48rpx;
+  font-size: 34rpx;
+  margin-bottom: 32rpx;
+  background: #e48d21;
+  color: #fff;
+  border: none;
+}
+
+.entry-btn::after {
+  border: none;
+}
+
+.entry-btn.button-hover {
+  background: #c97810;
+  color: #fff;
 }

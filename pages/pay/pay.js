@@ -55,7 +55,8 @@ Page({
       tt.navigateBack({
         delta: 1,
         fail: () => {
-          tt.redirectTo({ url: '/pages/index/index' });
+          // 兜底：回不到上一页时落到 web-view 中转页（首屏 index 已改为原生入口按钮页）
+          tt.redirectTo({ url: '/pages/web/web' });
         },
       });
     }, 200);
