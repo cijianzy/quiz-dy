@@ -1,0 +1,31 @@
+<view class="page">
+  <view class="brand">猜盐</view>
+  <view class="desc">使用抖音账号一键登录</view>
+
+  <button
+    class="login-btn"
+    type="primary"
+    loading="{{loading}}"
+    disabled="{{loading}}"
+    bindtap="onTapLogin"
+  >
+    {{ loading ? '正在授权…' : '抖音授权登录' }}
+  </button>
+
+  <!--
+    抖音「获取手机号」能力开通后，把上面按钮换成下面这块即可：
+    <button
+      class="login-btn"
+      type="primary"
+      open-type="getPhoneNumber"
+      loading="{{loading}}"
+      disabled="{{loading}}"
+      bindgetphonenumber="onGetPhoneNumber"
+    >
+      {{ loading ? '正在登录…' : '抖音手机号登录' }}
+    </button>
+    并把 login.js 切回 onGetPhoneNumber 分支。
+  -->
+
+  <view class="tip">登录即代表你同意《用户协议》与《隐私政策》</view>
+</view>

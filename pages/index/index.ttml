@@ -1,0 +1,1 @@
+<web-view tt:if="{{src}}" class="webview-container" src="{{src}}" bindmessage="onWebViewMessage"></web-view>
